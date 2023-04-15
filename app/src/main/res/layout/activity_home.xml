@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#94FAF0"
+    tools:context=".home">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="242dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_small"
+        tools:ignore="ImageContrastCheck" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/baseline_person_24"
+        android:contentDescription="@string/profile"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/baseline_shopping_cart_24"
+        android:contentDescription="@string/cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/bagira_logo"
+                android:layout_width="125dp"
+                android:layout_height="142dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="@string/bagira_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bagira_logo" />
+
+            <ImageView
+                android:id="@+id/bisleri_logo"
+                android:layout_width="125dp"
+                android:layout_height="142dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/bisleri_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gina_soda_logo"
+                app:srcCompat="@drawable/bisleri_logo"
+                tools:ignore="ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/samsh_logo"
+                android:layout_width="125dp"
+                android:layout_height="142dp"
+                android:layout_marginTop="28dp"
+                android:contentDescription="@string/smash_logo"
+                app:layout_constraintEnd_toStartOf="@+id/bisleri_logo"
+                app:layout_constraintStart_toEndOf="@+id/paperboat_logo"
+                app:layout_constraintTop_toBottomOf="@+id/haywards_logo"
+                app:srcCompat="@drawable/smash_logo" />
+
+            <ImageView
+                android:id="@+id/paperboat_logo"
+                android:layout_width="125dp"
+                android:layout_height="142dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/paperboat_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bagira_logo"
+                app:srcCompat="@drawable/paperboat_logo" />
+
+            <ImageView
+                android:id="@+id/gina_soda_logo"
+                android:layout_width="125dp"
+                android:layout_height="142dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/gina_soda_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/gina_soda_logo" />
+
+            <ImageView
+                android:id="@+id/haywards_logo"
+                android:layout_width="125dp"
+                android:layout_height="142dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:contentDescription="@string/haywards_logo"
+                app:layout_constraintEnd_toStartOf="@+id/gina_soda_logo"
+                app:layout_constraintStart_toEndOf="@+id/bagira_logo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/haywards_logo" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="500dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/samsh_logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/samsh_logo">
+
+                <ViewFlipper
+                    android:id="@+id/flup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="280dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
