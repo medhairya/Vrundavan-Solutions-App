@@ -2,6 +2,7 @@ package com.dhairya.vrundavansolutions;
 
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,10 @@ public class home extends AppCompatActivity {
         }
 
     }
+
+    TextView paperboat= findViewById(R.id.paperboat_logo);
+
+
 
     public void showimage(int img){
         ImageView imageview=new ImageView(this);

@@ -124,18 +124,9 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/haywards_logo" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="500dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/samsh_logo" />
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -145,7 +136,7 @@
                 <ViewFlipper
                     android:id="@+id/flup"
                     android:layout_width="wrap_content"
-                    android:layout_height="280dp"
+                    android:layout_height="500dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp" />
             </LinearLayout>

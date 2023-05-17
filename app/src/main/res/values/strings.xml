@@ -31,4 +31,17 @@
     <string name="paperboat_logo">paperboat_logo</string>
     <string name="smash_logo">smash_logo</string>
     <string name="bisleri_logo">bisleri_logo</string>
+    <string name="paper_boat_tasty_apple_150ml">Paper Boat Tasty Apple (150ml)</string>
+    <string name="mrp_10_10_x_54_pieces">MRP: ₹ 540 (10₹ X 54 Pieces)</string>
+    <string name="_540">₹ 540</string>
+    <string name="_470">₹ 470</string>
+    <string name="retail_8_70_8_70_x_54_pieces">Retail: ₹ 470 (8.70₹ X 54 Pieces)</string>
+    <string name="paperboat_apple">paperboat_apple</string>
+    <string name="paper_boat_slurpy_mango_150ml">Paper Boat Slurpy Mango (150ml)</string>
+    <string name="paperboat_guava">paperboat_guava</string>
+    <string name="paper_boat_yummy_guava_150ml">Paper Boat Yummy Guava (150ml)</string>
+    <string name="paperboat_mango">paperboat mango</string>
+    <string name="paper_boat_lush_lychee_150ml">Paper Boat Lush Lychee (150ml)</string>
+    <string name="paper_boat_mixed_fruit_150ml">Paper Boat Mixed Fruit (150ml)</string>
+    <string name="paper_boat_pulpy_orange_150ml">Paper Boat Pulpy Orange (150ml)</string>
 </resources>
