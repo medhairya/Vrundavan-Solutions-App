@@ -30,7 +30,7 @@ public class loginpage extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(loginpage.this, registratiopage.class);
+                Intent intent = new Intent(loginpage.this, registrationpage.class);
                 startActivity(intent);
             }
         });

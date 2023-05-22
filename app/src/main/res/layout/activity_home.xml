@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#94FAF0"
+    android:background="#FFFFFF"
     tools:context=".home">
 
     <ImageView
@@ -58,88 +58,65 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
+            <Button
                 android:id="@+id/bagira_logo"
                 android:layout_width="125dp"
                 android:layout_height="142dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bagira_logo"
                 android:contentDescription="@string/bagira_logo"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/paperboat_logo"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/paperboat_logo"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/bagira_logo" />
 
-            <ImageView
-                android:id="@+id/bisleri_logo"
-                android:layout_width="125dp"
-                android:layout_height="142dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="8dp"
-                android:contentDescription="@string/bisleri_logo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/gina_soda_logo"
-                app:srcCompat="@drawable/bisleri_logo"
-                tools:ignore="ImageContrastCheck" />
-
-            <ImageView
-                android:id="@+id/samsh_logo"
-                android:layout_width="125dp"
-                android:layout_height="142dp"
-                android:layout_marginTop="28dp"
-                android:contentDescription="@string/smash_logo"
-                app:layout_constraintEnd_toStartOf="@+id/bisleri_logo"
-                app:layout_constraintStart_toEndOf="@+id/paperboat_logo"
-                app:layout_constraintTop_toBottomOf="@+id/haywards_logo"
-                app:srcCompat="@drawable/smash_logo" />
-
-            <ImageView
+            <Button
                 android:id="@+id/paperboat_logo"
                 android:layout_width="125dp"
                 android:layout_height="142dp"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="30dp"
+                android:background="@drawable/paperboat_logo"
                 android:contentDescription="@string/paperboat_logo"
+                app:layout_constraintEnd_toStartOf="@+id/gina_soda_logo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bagira_logo"
                 app:srcCompat="@drawable/paperboat_logo" />
 
-            <ImageView
+            <Button
                 android:id="@+id/gina_soda_logo"
                 android:layout_width="125dp"
                 android:layout_height="142dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/gina_soda_logo"
                 android:contentDescription="@string/gina_soda_logo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/haywards_logo"
+                app:layout_constraintStart_toStartOf="@+id/haywards_logo"
+                app:layout_constraintTop_toBottomOf="@+id/haywards_logo"
                 app:srcCompat="@drawable/gina_soda_logo" />
 
-            <ImageView
+            <Button
                 android:id="@+id/haywards_logo"
                 android:layout_width="125dp"
                 android:layout_height="142dp"
-                android:layout_marginStart="18dp"
-                android:layout_marginEnd="18dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="52dp"
+                android:background="@drawable/haywards_logo"
                 android:contentDescription="@string/haywards_logo"
-                app:layout_constraintEnd_toStartOf="@+id/gina_soda_logo"
-                app:layout_constraintStart_toEndOf="@+id/bagira_logo"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/haywards_logo" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/samsh_logo">
-
-                <ViewFlipper
-                    android:id="@+id/flup"
-                    android:layout_width="wrap_content"
-                    android:layout_height="500dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="30dp" />
-            </LinearLayout>
+                app:layout_constraintTop_toBottomOf="@+id/paperboat_logo" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
