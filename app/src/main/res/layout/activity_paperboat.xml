@@ -65,8 +65,8 @@
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="149dp"
-                android:layout_height="133dp"
+                android:layout_width="88dp"
+                android:layout_height="134dp"
                 android:layout_marginTop="5dp"
                 android:contentDescription="@string/paperboat_mango"
                 app:layout_constraintBottom_toBottomOf="@+id/view"
@@ -151,10 +151,10 @@
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/paper_boat_slurpy_mango_150ml"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView6"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,8 +162,7 @@
                 android:id="@+id/textView20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/mrp_10_10_x_54_pieces"
                 app:layout_constraintStart_toStartOf="@+id/textView17"
                 app:layout_constraintTop_toBottomOf="@+id/textView17" />
@@ -179,7 +178,7 @@
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="149dp"
+                android:layout_width="88dp"
                 android:layout_height="133dp"
                 android:contentDescription="@string/paperboat_guava"
                 app:layout_constraintBottom_toTopOf="@+id/view5"
@@ -192,10 +191,10 @@
                 android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/paper_boat_yummy_guava_150ml"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView7"
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
@@ -203,8 +202,7 @@
                 android:id="@+id/textView23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/mrp_10_10_x_54_pieces"
                 app:layout_constraintStart_toStartOf="@+id/textView22"
                 app:layout_constraintTop_toBottomOf="@+id/textView22" />
@@ -220,7 +218,7 @@
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="149dp"
+                android:layout_width="88dp"
                 android:layout_height="133dp"
                 android:contentDescription="@string/paper_boat_lush_lychee_150ml"
                 app:layout_constraintBottom_toTopOf="@+id/view6"
@@ -233,10 +231,10 @@
                 android:id="@+id/textView25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/paper_boat_lush_lychee_150ml"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView8"
                 app:layout_constraintTop_toBottomOf="@+id/view5" />
 
@@ -244,8 +242,7 @@
                 android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/retail_8_70_8_70_x_54_pieces"
                 app:layout_constraintStart_toStartOf="@+id/textView25"
                 app:layout_constraintTop_toBottomOf="@+id/textView25" />
@@ -261,7 +258,7 @@
 
             <ImageView
                 android:id="@+id/imageView9"
-                android:layout_width="149dp"
+                android:layout_width="88dp"
                 android:layout_height="133dp"
                 android:contentDescription="@string/paper_boat_mixed_fruit_150ml"
                 app:layout_constraintBottom_toTopOf="@+id/view7"
@@ -274,10 +271,10 @@
                 android:id="@+id/textView28"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/paper_boat_mixed_fruit_150ml"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView9"
                 app:layout_constraintTop_toBottomOf="@+id/view6" />
 
@@ -285,8 +282,7 @@
                 android:id="@+id/textView29"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/mrp_10_10_x_54_pieces"
                 app:layout_constraintStart_toStartOf="@+id/textView28"
                 app:layout_constraintTop_toBottomOf="@+id/textView28" />
@@ -302,7 +298,7 @@
 
             <ImageView
                 android:id="@+id/imageView10"
-                android:layout_width="149dp"
+                android:layout_width="88dp"
                 android:layout_height="133dp"
                 android:contentDescription="@string/paperboat_apple"
                 app:layout_constraintBottom_toTopOf="@+id/view8"
@@ -315,10 +311,10 @@
                 android:id="@+id/textView31"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/paper_boat_tasty_apple_150ml"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/view7"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
                 app:layout_constraintTop_toBottomOf="@+id/view7" />
 
@@ -326,8 +322,7 @@
                 android:id="@+id/textView32"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/mrp_10_10_x_54_pieces"
                 app:layout_constraintStart_toStartOf="@+id/textView31"
                 app:layout_constraintTop_toBottomOf="@+id/textView31" />
@@ -343,21 +338,23 @@
 
             <ImageView
                 android:id="@+id/imageView11"
-                android:layout_width="149dp"
+                android:layout_width="88dp"
                 android:layout_height="133dp"
                 android:contentDescription="@string/paper_boat_pulpy_orange_150ml"
                 app:layout_constraintBottom_toTopOf="@+id/view9"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/view8"
-                app:srcCompat="@drawable/paperboatorange" />
+                app:srcCompat="@drawable/paperboatorange"
+                tools:ignore="ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/textView34"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/paper_boat_pulpy_orange_150ml"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/view8"
                 app:layout_constraintStart_toEndOf="@+id/imageView11"
                 app:layout_constraintTop_toBottomOf="@+id/view8" />
 
@@ -365,7 +362,6 @@
                 android:id="@+id/textView35"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:text="@string/mrp_10_10_x_54_pieces"
                 app:layout_constraintStart_toStartOf="@+id/textView34"
@@ -381,6 +377,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
             <LinearLayout
+                android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -400,13 +397,12 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1500dp"
-                android:text=""
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="100dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

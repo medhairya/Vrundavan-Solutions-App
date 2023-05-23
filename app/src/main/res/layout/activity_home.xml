@@ -12,9 +12,9 @@
         android:id="@+id/imageView2"
         android:layout_width="242dp"
         android:layout_height="98dp"
-        android:layout_marginTop="15dp"
         android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_small"
@@ -107,16 +107,36 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/haywards_logo" />
 
-            <VideoView
-                android:id="@+id/videoView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/paperboat_logo" />
+                app:layout_constraintTop_toBottomOf="@+id/gina_soda_logo">
+
+                <ViewFlipper
+                    android:id="@+id/flup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="500dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="700dp"
+                android:layout_weight="1"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gina_soda_logo" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
