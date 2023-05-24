@@ -18,7 +18,7 @@ public class home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        int[] imgs = {R.drawable.bagira2, R.drawable.bagira3, R.drawable.bagira4, R.drawable.bagira5, R.drawable.bagira6,R.drawable.bagira7, R.drawable.bagira8,R.drawable.bagira9,R.drawable.bagira10,R.drawable.bagira11};
+        int[] imgs = { R.drawable.bagira3, R.drawable.bagira6,R.drawable.bagira7, R.drawable.bagira8,R.drawable.bagira9,R.drawable.bagira10,R.drawable.bagira11};
         flipper = findViewById(R.id.flup);
 
         for (int j : imgs) {
