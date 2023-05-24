@@ -45,6 +45,25 @@ public class home extends AppCompatActivity {
             }
         });
 
+        //haywards
+        Button haywards1 = findViewById(R.id.haywards_logo);
+        haywards1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View v){
+                Intent intent = new Intent(home.this, haywards.class);
+                startActivity(intent);
+            }
+        });
+
+        //gina
+        Button gina1 = findViewById(R.id.gina_soda_logo);
+        gina1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View v){
+                Intent intent = new Intent(home.this, gina.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

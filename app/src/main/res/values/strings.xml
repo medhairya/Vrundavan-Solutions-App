@@ -69,4 +69,8 @@
     <string name="haywards_5000_soda_750ml">Haywards 5000 Soda (750ml)</string>
     <string name="mrp_400_20_x_20_pieces">MRP: 400 ₹ (20 ₹ X 20 Pieces)</string>
     <string name="retail_280_14_x_20_pieces">Retail: 280 ₹ (14 ₹ X 20 Pieces)</string>
+    <string name="gina_soda_jeera_200_ml">Gina Soda Jeera (200 mL)</string>
+    <string name="mrp_300_10_x_30_pieces">MRP: 300 ₹ (10 ₹ X 30 Pieces)</string>
+    <string name="mrp_255_8_5_x_30_pieces">MRP: 255 ₹ (8.5 ₹ X 30 Pieces)</string>
+    <string name="retail_255_8_5_x_30_pieces">Retail: 255 ₹ (8.5 ₹ X 30 Pieces)</string>
 </resources>
