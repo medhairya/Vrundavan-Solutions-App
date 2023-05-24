@@ -115,7 +115,8 @@
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="@+id/layoutPassword"
         app:layout_constraintTop_toBottomOf="@+id/layoutPassword"
-        tools:ignore="RedundantDescriptionCheck">
+        tools:ignore="RedundantDescriptionCheck"
+        android:focusable="true">
 
 
         <TextView
@@ -123,7 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/button"
+            android:text="@string/logintext"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
