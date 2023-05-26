@@ -6,7 +6,7 @@
     <string name="logintext">Login</string>
     <string name="dont_have_an_account">Dont have an account</string>
     <string name="sign_in_text">Sign in</string>
-    <string name="_00000_00000">00000-00000</string>
+    <string name="_00000_00000">00000–00000</string>
     <string name="customer_name">Customer Name</string>
     <string name="enter_your_name">Enter Your Name</string>
     <string name="shop_name">Shop Name</string>
@@ -73,4 +73,7 @@
     <string name="mrp_300_10_x_30_pieces">MRP: 300 ₹ (10 ₹ X 30 Pieces)</string>
     <string name="mrp_255_8_5_x_30_pieces">MRP: 255 ₹ (8.5 ₹ X 30 Pieces)</string>
     <string name="retail_255_8_5_x_30_pieces">Retail: 255 ₹ (8.5 ₹ X 30 Pieces)</string>
+    <string name="gina_soda_orange_200_ml">Gina Soda Orange (200 mL)</string>
+    <string name="gina_soda_t2_sprite_200_ml">Gina Soda T2 Sprite (200 mL)</string>
+    <string name="gina_soda_white_limca_200_ml">Gina Soda White Limca(200 mL)</string>
 </resources>
