@@ -35,7 +35,7 @@ public class loginpage extends AppCompatActivity {
             }
         });
 
-    buttonLayout = findViewById(R.id.button);
+    buttonLayout = findViewById(R.id.registerButton);
     buttonText = findViewById(R.id.button_text);
     buttonAnimation = findViewById(R.id.button_animation);
 

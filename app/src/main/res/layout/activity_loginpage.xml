@@ -103,7 +103,7 @@
         tools:ignore="TextContrastCheck" />
 
     <RelativeLayout
-        android:id="@id/button"
+        android:id="@id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_margin="25dp"

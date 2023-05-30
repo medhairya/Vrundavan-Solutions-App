@@ -76,4 +76,6 @@
     <string name="gina_soda_orange_200_ml">Gina Soda Orange (200 mL)</string>
     <string name="gina_soda_t2_sprite_200_ml">Gina Soda T2 Sprite (200 mL)</string>
     <string name="gina_soda_white_limca_200_ml">Gina Soda White Limca(200 mL)</string>
+    <string name="enter_your_shop_address">Enter Your Shop Address</string>
+    <string name="test">Test Crash</string>
 </resources>
