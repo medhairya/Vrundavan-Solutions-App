@@ -24,16 +24,16 @@ import java.util.HashMap;
 
 public class registrationpage extends AppCompatActivity {
 
-    EditText InputName, InputShopName, InputShopAddress, InputPhone, InputPassword;
+    private EditText InputName, InputShopName, InputShopAddress, InputPhone, InputPassword;
     Button RegisterButton;
-    ProgressDialog loadingBar;
+    private ProgressDialog loadingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registratiopage);
 
-        RegisterButton = findViewById(R.id.registerButton);
+        RegisterButton = findViewById(R.id.eLoginButton);
         InputName = findViewById(R.id.inputName);
         InputShopName = findViewById(R.id.inputShopName);
         InputShopAddress = findViewById(R.id.inputShopAddress);
@@ -72,11 +72,11 @@ public class registrationpage extends AppCompatActivity {
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
 
-            ValidatephoneNumber(Name, PhoneNumber, Password);
+            ValidatephoneNumber(PhoneNumber, Password, ShopAddress, Name, ShopName);
         }
     }
 
-    public void ValidatephoneNumber(String name, String phoneNumber, String password) {
+    public void ValidatephoneNumber(String phoneNumber, String password, String shopAddress, String name, String shopName) {
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -86,8 +86,10 @@ public class registrationpage extends AppCompatActivity {
                 if (!(dataSnapshot.child("Users").child(phoneNumber).exists())) {
                     HashMap<String, Object> userdataMap = new HashMap<>();
                     userdataMap.put("Phone", phoneNumber);
-                    userdataMap.put("Name", name);
                     userdataMap.put("Password", password);
+                    userdataMap.put("Shop_Address", shopAddress);
+                    userdataMap.put("Name", name);
+                    userdataMap.put("Shop_Name", shopName);
 
                     RootRef.child("Users").child(phoneNumber).updateChildren(userdataMap)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -96,17 +98,20 @@ public class registrationpage extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(registrationpage.this, "Congratulations, You have created your new Account", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
-
-                                        Intent intent = new Intent(registrationpage.this, home.class);
+                                        Intent intent = new Intent(registrationpage.this, loginpage.class);
                                         startActivity(intent);
                                         finish();
-                                    } else {
+                                    }
+                                    else {
                                         loadingBar.dismiss();
-                                        Toast.makeText(registrationpage.this, "Please Try Again Later", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(registrationpage.this, "Phone Number Already Registered", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(registrationpage.this, loginpage.class);
+                                        startActivity(intent);
                                     }
                                 }
                             });
-                } else {
+                }
+                else {
                     Toast.makeText(registrationpage.this, "This " + phoneNumber + " Already Exists", Toast.LENGTH_SHORT).show();
                     loadingBar.dismiss();
 
