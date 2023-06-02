@@ -80,4 +80,10 @@
     <string name="test">Test Crash</string>
     <string name="phone_number">Phone Number</string>
     <string name="password_string">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="admin">Admin?</string>
+    <string name="not_admin">Not Admin</string>
+    <string name="admin_panel">Admin Panel</string>
+    <string name="loginadmin">Login Admin</string>
+    <string name="login1">Login</string>
 </resources>

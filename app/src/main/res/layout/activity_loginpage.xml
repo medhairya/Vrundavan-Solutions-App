@@ -31,7 +31,7 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/phone_number"
-        android:inputType="phone"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
@@ -47,7 +47,8 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/password_string"
-        android:inputType="textPersonName"
+        app:passwordToggleEnabled="true"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ePhoneNumber"
@@ -57,6 +58,7 @@
         android:id="@+id/eLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:backgroundTint="#029EE3"
         android:text="@string/logintext"
         app:layout_constraintBottom_toTopOf="@+id/textView1"
@@ -69,7 +71,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="200dp"
         android:text="@string/dont_have_an_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -77,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ePassword" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/register_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -88,6 +90,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1"
         tools:ignore="TextContrastCheck" />
+
+    <CheckBox
+        android:id="@+id/remeber_me_chkb"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/remember_me"
+        app:layout_constraintBottom_toTopOf="@+id/eLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ePassword" />
+
+    <TextView
+        android:id="@+id/admin_panel_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/admin"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/eLogin"
+        app:layout_constraintEnd_toEndOf="@+id/ePassword"
+        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remeber_me_chkb"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <TextView
+        android:id="@+id/not_admin_panel_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/not_admin"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/eLogin"
+        app:layout_constraintEnd_toEndOf="@+id/admin_panel_link"
+        app:layout_constraintStart_toStartOf="@+id/admin_panel_link"
+        app:layout_constraintTop_toBottomOf="@+id/admin_panel_link" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,9 +9,12 @@ import android.widget.ViewFlipper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import io.paperdb.Paper;
+
 
 public class home extends AppCompatActivity {
     public ViewFlipper flipper = null;
+    private Button LogoutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,19 @@ public class home extends AppCompatActivity {
 
         //paperBoat
         Button paperboat1 = findViewById(R.id.paperboat_logo);
+        LogoutBtn = findViewById(R.id.logout_button);
+
+        LogoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Paper.book().destroy();
+
+                Intent intent = new Intent(home.this, loginpage.class);
+                startActivity(intent);
+            }
+        });
+
+
         paperboat1.setOnClickListener(new View.OnClickListener(){
         @Override
         public void onClick (View v){

@@ -56,8 +56,8 @@
             <View
                 android:id="@+id/view2"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/black"
+                android:layout_height="1dp"
+                android:background="#989494"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -107,9 +107,9 @@
             <View
                 android:id="@+id/view3"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:layout_marginTop="150dp"
-                android:background="@color/black"
+                android:background="#989494"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -156,9 +156,9 @@
             <View
                 android:id="@+id/view10"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:layout_marginTop="150dp"
-                android:background="@color/black"
+                android:background="#989494"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -206,9 +206,9 @@
             <View
                 android:id="@+id/view11"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:layout_marginTop="150dp"
-                android:background="@color/black"
+                android:background="#989494"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -256,9 +256,9 @@
             <View
                 android:id="@+id/view12"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:layout_marginTop="150dp"
-                android:background="@color/black"
+                android:background="#989494"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -267,19 +267,20 @@
             <ImageView
                 android:id="@+id/imageView14"
                 android:layout_width="wrap_content"
-                android:contentDescription="@string/black_bagira_water_1_l"
                 android:layout_height="133dp"
+                android:contentDescription="@string/black_bagira_water_1_l"
                 app:layout_constraintBottom_toTopOf="@+id/view13"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view12"
-                app:srcCompat="@drawable/bagira_og" />
+                app:srcCompat="@drawable/bagira_og"
+                tools:ignore="ImageContrastCheck" />
 
             <View
                 android:id="@+id/view13"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:layout_marginTop="150dp"
-                android:background="@color/black"
+                android:background="#989494"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
