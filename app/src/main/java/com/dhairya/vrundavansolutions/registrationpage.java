@@ -33,7 +33,7 @@ public class registrationpage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registratiopage);
 
-        RegisterButton = findViewById(R.id.eLoginButton);
+        RegisterButton = findViewById(R.id.update_button);
         InputName = findViewById(R.id.inputName);
         InputShopName = findViewById(R.id.inputShopName);
         InputShopAddress = findViewById(R.id.inputShopAddress);

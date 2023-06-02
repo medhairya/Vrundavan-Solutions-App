@@ -14,7 +14,7 @@ import io.paperdb.Paper;
 
 public class home extends AppCompatActivity {
     public ViewFlipper flipper = null;
-    private Button LogoutBtn;
+    Button LogoutBtn,profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +28,20 @@ public class home extends AppCompatActivity {
             showimage(j);
         }
 
-        //paperBoat
-        Button paperboat1 = findViewById(R.id.paperboat_logo);
-        LogoutBtn = findViewById(R.id.logout_button);
+        //profile
+        profile = findViewById(R.id.profile_button);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profile_intent = new Intent(home.this, profile.class);
+                String sharePhone = getIntent().getStringExtra("Phone");
+                profile_intent.putExtra("Phone", sharePhone); // Pass the phoneUser value
+                startActivity(profile_intent);
+            }
+        });
 
+        //logout
+        LogoutBtn = findViewById(R.id.logout_button);
         LogoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +53,8 @@ public class home extends AppCompatActivity {
         });
 
 
+        //paperBoat
+        Button paperboat1 = findViewById(R.id.paperboat_logo);
         paperboat1.setOnClickListener(new View.OnClickListener(){
         @Override
         public void onClick (View v){

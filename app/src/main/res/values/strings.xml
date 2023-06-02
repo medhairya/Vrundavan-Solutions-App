@@ -86,4 +86,8 @@
     <string name="admin_panel">Admin Panel</string>
     <string name="loginadmin">Login Admin</string>
     <string name="login1">Login</string>
+    <string name="update">Update</string>
+    <string name="home">Home</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="logout">Logout</string>
 </resources>

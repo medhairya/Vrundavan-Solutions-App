@@ -36,7 +36,6 @@ public class loginpage extends AppCompatActivity {
     private TextView AdminLink, NotAdminLink;
     private String parentDbName = "Users";
     private CheckBox chkBoxRememberMe;
-    private TextView text ;
 
 
     @SuppressLint("MissingInflatedId")
@@ -60,7 +59,7 @@ public class loginpage extends AppCompatActivity {
         String UserPasswordKey = Paper.book().read(Prevalent.UserPasswordKey);
 
 
-        text = (TextView) findViewById(R.id.register_text);
+        TextView text = (TextView) findViewById(R.id.register_text);
         text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -187,14 +186,15 @@ public class loginpage extends AppCompatActivity {
                                 Toast.makeText(loginpage.this, "Welcome Ashwin", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
-                                Intent adminintent = new Intent(loginpage.this, adminActivty.class);
-                                startActivity(adminintent);
+                                Intent admin_intent = new Intent(loginpage.this, adminActivty.class);
+                                startActivity(admin_intent);
                             }
                             else if(parentDbName.equals("Users")){
                                 Toast.makeText(loginpage.this, "Login Successful", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
 
                                 Intent intent = new Intent(loginpage.this, home.class);
+                                intent.putExtra("Phone", phone);
                                 startActivity(intent);
                             }
                         }
