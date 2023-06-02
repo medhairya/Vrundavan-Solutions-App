@@ -32,7 +32,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/profile_paperboat"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"

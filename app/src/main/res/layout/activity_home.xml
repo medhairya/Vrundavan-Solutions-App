@@ -21,7 +21,7 @@
         tools:ignore="ImageContrastCheck" />
 
     <Button
-        android:id="@+id/profile_button"
+        android:id="@+id/profile_bagira"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"

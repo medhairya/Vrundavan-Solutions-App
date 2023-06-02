@@ -29,7 +29,7 @@ public class home extends AppCompatActivity {
         }
 
         //profile
-        profile = findViewById(R.id.profile_button);
+        profile = findViewById(R.id.profile_bagira);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

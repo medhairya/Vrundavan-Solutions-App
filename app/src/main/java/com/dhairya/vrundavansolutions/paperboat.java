@@ -1,7 +1,11 @@
 package com.dhairya.vrundavansolutions;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
@@ -12,6 +16,18 @@ public class paperboat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paperboat);
+
+
+        //profile
+        Button profilebtn = findViewById(R.id.profile_paperboat);
+        profilebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profile_intent = new Intent(paperboat.this, profile.class);
+                startActivity(profile_intent);
+            }
+        });
+
 
         int[] imgs = { R.drawable.bagira3, R.drawable.bagira6,R.drawable.bagira7, R.drawable.bagira8,R.drawable.bagira9,R.drawable.bagira10,R.drawable.bagira11};
         flipper = findViewById(R.id.flup);
