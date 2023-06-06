@@ -90,4 +90,11 @@
     <string name="home">Home</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="logout">Logout</string>
+    <string name="plus_bagira_bottle">plus_bagira_bottle</string>
+    <string name="minus_bagira_bottle">minus_bagira_bottle</string>
+    <string name="show_bagira_can_red">show_bagira_can_red</string>
+    <string name="minus_bagira_can_red">minus_bagira_can_red</string>
+    <string name="plus_bagira_can_red">plus_bagira_can_red</string>
+    <string name="_0">0</string>
+    <string name="show_bagira_bottle">show bagira bottle</string>
 </resources>

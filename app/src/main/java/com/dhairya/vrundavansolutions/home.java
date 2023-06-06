@@ -2,6 +2,7 @@ package com.dhairya.vrundavansolutions;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +24,13 @@ public class home extends AppCompatActivity {
 
         int[] imgs = { R.drawable.bagira3, R.drawable.bagira6,R.drawable.bagira7, R.drawable.bagira8,R.drawable.bagira9,R.drawable.bagira10,R.drawable.bagira11};
         flipper = findViewById(R.id.flup);
+        flipper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent bagira_intent = new Intent(home.this, bagira.class);
+                startActivity(bagira_intent);
+            }
+        });
 
         for (int j : imgs) {
             showimage(j);
@@ -68,8 +76,11 @@ public class home extends AppCompatActivity {
         bagira1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick (View v){
-                Intent intent = new Intent(home.this, bagira.class);
-                startActivity(intent);
+                Intent bagira_intent = new Intent(home.this, bagira.class);
+                startActivity(bagira_intent);
+                String sharePhone = getIntent().getStringExtra("Phone");
+                bagira_intent.putExtra("Phone", sharePhone); // Pass the phoneUser value
+
             }
         });
 
