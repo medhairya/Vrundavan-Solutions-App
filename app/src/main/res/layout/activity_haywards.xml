@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".haywards">
+
+    <Button
+        android:id="@+id/profile_haywards"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/baseline_person_24"
+        android:contentDescription="@string/profile"
+        app:layout_constraintEnd_toStartOf="@+id/imageView15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="242dp"
+        android:layout_height="98dp"
+        android:contentDescription="@string/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_small"
+        tools:ignore="ImageContrastCheck" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/baseline_shopping_cart_24"
+        android:contentDescription="@string/cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="60dp"
+                android:layout_height="133dp"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/hawards_300ml"
+                app:layout_constraintBottom_toTopOf="@+id/view14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4"
+                app:srcCompat="@drawable/haywards_bottle" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/haywards_5000_soda_300ml"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView16"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/mrp_240_10_x_24_piece"
+                app:layout_constraintStart_toStartOf="@+id/textView44"
+                app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/retail_200_8_3_x_24_pieces"
+                app:layout_constraintStart_toStartOf="@+id/textView45"
+                app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/scheme_1_free_bagira_water_bottle_1_l"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/textView46"
+                app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+            <View
+                android:id="@+id/view14"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="200dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view15"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="200dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view14" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="60dp"
+                android:layout_height="133dp"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="@string/hawards_750ml"
+                app:layout_constraintBottom_toTopOf="@+id/view15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view14"
+                app:srcCompat="@drawable/haywards_bottle" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/haywards_5000_soda_750ml"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView17"
+                app:layout_constraintTop_toBottomOf="@+id/view14" />
+
+            <TextView
+                android:id="@+id/textView49"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/mrp_400_20_x_20_pieces"
+                app:layout_constraintStart_toStartOf="@+id/textView48"
+                app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/retail_280_14_x_20_pieces"
+                app:layout_constraintStart_toStartOf="@+id/textView49"
+                app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/scheme_1_free_bagira_water_bottle_1_l"
+                app:layout_constraintStart_toStartOf="@+id/textView50"
+                app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+            <TextView
+                android:id="@+id/show_bottle1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/show_bagira_bottle"
+                android:gravity="center|fill_vertical"
+                android:text="@string/_0"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_1"
+                app:layout_constraintEnd_toStartOf="@+id/minus_bottle1"
+                app:layout_constraintStart_toEndOf="@+id/plus_bottle_1"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_1" />
+
+            <TextView
+                android:id="@+id/show_bottle2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/show_bagira_bottle"
+                android:gravity="center|fill_vertical"
+                android:text="@string/_0"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_2"
+                app:layout_constraintEnd_toStartOf="@+id/minus_bottle2"
+                app:layout_constraintStart_toEndOf="@+id/plus_bottle_2"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_2" />
+
+            <Button
+                android:id="@+id/minus_bottle1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="270dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/minus_bagira_bottle"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_1"
+                app:layout_constraintStart_toEndOf="@+id/imageView16"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_1" />
+
+            <Button
+                android:id="@+id/minus_bottle2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="270dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/minus_bagira_bottle"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_2"
+                app:layout_constraintStart_toEndOf="@+id/imageView17"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_2" />
+
+            <Button
+                android:id="@+id/plus_bottle_1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:contentDescription="@string/plus_bagira_bottle"
+                app:layout_constraintBottom_toTopOf="@+id/view14"
+                app:layout_constraintStart_toEndOf="@+id/imageView16" />
+
+            <Button
+                android:id="@+id/plus_bottle_2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:contentDescription="@string/plus_bagira_bottle"
+                app:layout_constraintBottom_toTopOf="@+id/view15"
+                app:layout_constraintStart_toEndOf="@+id/imageView17"
+                app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

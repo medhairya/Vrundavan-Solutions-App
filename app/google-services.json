@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "81039969390",
+    "project_id": "vrundavan-solutions",
+    "storage_bucket": "vrundavan-solutions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81039969390:android:fbafe953b4de23d535aa7f",
+        "android_client_info": {
+          "package_name": "com.dhairya.vrundavansolutions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81039969390-134cn4hrrgf9rp78p18bhck91lujat2c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhairya.vrundavansolutions",
+            "certificate_hash": "bc23f68ba305f507a4e957020d00781ca1557993"
+          }
+        },
+        {
+          "client_id": "81039969390-qs70tq8o066hh4820boeqapjnqlpdj5n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo9Z_EHFminsJK3s4aPYecxOom2W2P3KI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81039969390-qs70tq8o066hh4820boeqapjnqlpdj5n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
