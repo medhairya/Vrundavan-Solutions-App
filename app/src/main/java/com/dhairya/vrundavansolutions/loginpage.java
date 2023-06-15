@@ -127,6 +127,7 @@ public class loginpage extends AppCompatActivity {
                             loadingBar.dismiss();
 
                             Intent intent = new Intent(loginpage.this, home.class);
+                            intent.putExtra("phone",phone);
                             startActivity(intent);
                         } else {
                             Toast.makeText(loginpage.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
@@ -153,9 +154,11 @@ public class loginpage extends AppCompatActivity {
 
         if (TextUtils.isEmpty(phone)) {
             Toast.makeText(this, "Please Enter Phone Number", Toast.LENGTH_SHORT).show();
-        } else if (TextUtils.isEmpty(password)) {
+        }
+        else if (TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show();
-        } else {
+        }
+        else {
             loadingBar.setTitle("Logging into Your Account");
             loadingBar.setMessage("Loading...");
             loadingBar.setCanceledOnTouchOutside(false);
