@@ -14,7 +14,7 @@ import io.paperdb.Paper;
 
 public class home extends AppCompatActivity {
     public ViewFlipper flipper = null;
-    Button LogoutBtn,profile;
+    Button LogoutBtn,profile,cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,17 @@ public class home extends AppCompatActivity {
                 String sharePhone = getIntent().getStringExtra("Phone");
                 profile_intent.putExtra("Phone", sharePhone); // Pass the phoneUser value
                 startActivity(profile_intent);
+            }
+        });
+
+        //cart
+        cart = findViewById(R.id.cart_button);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cart_intent = new Intent(home.this, cart.class);
+                cart_intent.putExtra("phone",phone);
+                startActivity(cart_intent);
             }
         });
 

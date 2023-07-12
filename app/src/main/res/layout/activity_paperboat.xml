@@ -45,7 +45,9 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
@@ -53,15 +55,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-                <View
-                    android:id="@+id/view4"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="@color/black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_goneMarginTop="10dp" />
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginTop="10dp" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -79,7 +81,7 @@
                 android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="165dp"
                 android:background="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -91,7 +93,7 @@
                 android:id="@+id/view5"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="165dp"
                 android:background="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -103,7 +105,7 @@
                 android:id="@+id/view6"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="165dp"
                 android:background="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -115,7 +117,7 @@
                 android:id="@+id/view7"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="165dp"
                 android:background="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -127,7 +129,7 @@
                 android:id="@+id/view8"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="165dp"
                 android:background="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -139,7 +141,7 @@
                 android:id="@+id/view9"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="165dp"
                 android:background="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -376,15 +378,252 @@
                 app:layout_constraintStart_toStartOf="@+id/textView35"
                 app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="150dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+            <Button
+                android:id="@+id/plus_bottle_"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:contentDescription="@string/plus_bagira_bottle"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+            <Button
+                android:id="@+id/plus_bottle_3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:contentDescription="@string/plus_bagira_bottle"
+                app:layout_constraintBottom_toTopOf="@+id/view5"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+            <Button
+                android:id="@+id/plus_bottle_4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:contentDescription="@string/plus_bagira_bottle"
+                app:layout_constraintBottom_toTopOf="@+id/view6"
+                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+            <Button
+                android:id="@+id/plus_bottle_5"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:contentDescription="@string/plus_bagira_bottle"
+                app:layout_constraintBottom_toTopOf="@+id/view7"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+            <Button
+                android:id="@+id/plus_bottle_6"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:contentDescription="@string/plus_bagira_bottle"
+                app:layout_constraintBottom_toTopOf="@+id/view8"
+                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+            <Button
+                android:id="@+id/plus_bottle_7"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:drawable/ic_menu_add"
+                android:contentDescription="@string/plus_bagira_bottle"
+                app:layout_constraintBottom_toTopOf="@+id/view9"
+                app:layout_constraintStart_toEndOf="@+id/imageView11"
+                app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+            <TextView
+                android:id="@+id/show_bottle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/show_bagira_bottle"
+                android:gravity="center|fill_vertical"
+                android:text="@string/_0"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_3"
+                app:layout_constraintEnd_toStartOf="@+id/minus_bottle"
+                app:layout_constraintStart_toEndOf="@+id/plus_bottle_3"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_3" />
+
+            <TextView
+                android:id="@+id/show_bottle4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/show_bagira_bottle"
+                android:gravity="center|fill_vertical"
+                android:text="@string/_0"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_4"
+                app:layout_constraintEnd_toStartOf="@+id/minus_bottle4"
+                app:layout_constraintStart_toEndOf="@+id/plus_bottle_4"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_4" />
+
+            <TextView
+                android:id="@+id/show_bottle5"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/show_bagira_bottle"
+                android:gravity="center|fill_vertical"
+                android:text="@string/_0"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_5"
+                app:layout_constraintEnd_toStartOf="@+id/minus_bottle5"
+                app:layout_constraintStart_toEndOf="@+id/plus_bottle_5"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_5" />
+
+            <TextView
+                android:id="@+id/show_bottle6"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/show_bagira_bottle"
+                android:gravity="center|fill_vertical"
+                android:text="@string/_0"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_6"
+                app:layout_constraintEnd_toStartOf="@+id/minus_bottle6"
+                app:layout_constraintStart_toEndOf="@+id/plus_bottle_6"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_6" />
+
+            <TextView
+                android:id="@+id/show_bottle7"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/show_bagira_bottle"
+                android:gravity="center|fill_vertical"
+                android:text="@string/_0"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_7"
+                app:layout_constraintEnd_toStartOf="@+id/minus_bottle7"
+                app:layout_constraintStart_toEndOf="@+id/plus_bottle_7"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_7" />
+
+            <TextView
+                android:id="@+id/show_bottle3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/show_bagira_bottle"
+                android:gravity="center|fill_vertical"
+                android:text="@string/_0"
+                android:textSize="35sp"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_"
+                app:layout_constraintEnd_toStartOf="@+id/minus_bottle3"
+                app:layout_constraintStart_toEndOf="@+id/plus_bottle_"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_" />
+
+            <Button
+                android:id="@+id/minus_bottle"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="220dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/minus_bagira_bottle"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_3" />
+
+            <Button
+                android:id="@+id/minus_bottle4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="220dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/minus_bagira_bottle"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView8"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_4" />
+
+            <Button
+                android:id="@+id/minus_bottle5"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="220dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/minus_bagira_bottle"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_5" />
+
+            <Button
+                android:id="@+id/minus_bottle6"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="220dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/minus_bagira_bottle"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_6" />
+
+            <Button
+                android:id="@+id/minus_bottle7"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="220dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/minus_bagira_bottle"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView11"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_7" />
+
+            <Button
+                android:id="@+id/minus_bottle3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="220dp"
+                android:background="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="@string/minus_bagira_bottle"
+                app:layout_constraintBottom_toBottomOf="@+id/plus_bottle_"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toTopOf="@+id/plus_bottle_" />
+
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView11">
+                app:layout_constraintTop_toTopOf="@+id/view9">
 
                 <ViewFlipper
                     android:id="@+id/flup"
@@ -394,15 +633,6 @@
                     android:layout_marginTop="30dp" />
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="100dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

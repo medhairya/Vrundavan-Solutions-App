@@ -235,11 +235,13 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="150dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="15dp"
                 android:background="@android:drawable/ic_menu_add"
                 android:contentDescription="@string/plus_bagira_bottle"
                 app:layout_constraintBottom_toTopOf="@+id/view14"
-                app:layout_constraintStart_toEndOf="@+id/imageView16" />
+                app:layout_constraintStart_toEndOf="@+id/imageView16"
+                app:layout_constraintTop_toBottomOf="@+id/textView47" />
 
             <Button
                 android:id="@+id/plus_bottle_2"

@@ -97,4 +97,13 @@
     <string name="plus_bagira_can_red">plus_bagira_can_red</string>
     <string name="_0">0</string>
     <string name="show_bagira_bottle">show bagira bottle</string>
+    <string name="gina_soda_c_10_200_ml">Gina Soda C-10 (200 mL)</string>
+    <string name="gina_soda_red_apple_200_ml">Gina Soda Red Apple (200 mL)</string>
+    <string name="gina_soda_green_apple_200_ml">Gina Soda Green Apple (200 mL)</string>
+    <string name="plus">plus</string>
+    <string name="minus">minus</string>
+    <string name="item">item</string>
+    <string name="textview">TextView</string>
+    <string name="name">name</string>
+    <string name="price">price</string>
 </resources>

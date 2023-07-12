@@ -37,17 +37,14 @@ public class profile extends AppCompatActivity {
 
 
         //profile
-        Button profilebtn = findViewById(R.id.home_button);
-        profilebtn.setOnClickListener(new View.OnClickListener() {
+        Button home_button = findViewById(R.id.home_button);
+        home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent profile_intent = new Intent(profile.this, home.class);
                 startActivity(profile_intent);
             }
         });
-
-
-
 
         showData();
 
