@@ -19,7 +19,7 @@
             android:name=".profile"
             android:exported="false" />
         <activity
-            android:name=".adminActivty"
+            android:name=".adminActivity"
             android:exported="false" />
         <activity
             android:name=".gina"

@@ -106,4 +106,8 @@
     <string name="textview">TextView</string>
     <string name="name">name</string>
     <string name="price">price</string>
+    <string name="sum_total">Sum Total</string>
+    <string name="confirm_order">Confirm Order</string>
+    <string name="total">Total</string>
+    <string name="completed">Completed</string>
 </resources>
