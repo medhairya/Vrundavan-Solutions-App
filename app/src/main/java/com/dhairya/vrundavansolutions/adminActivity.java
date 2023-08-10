@@ -2,6 +2,8 @@ package com.dhairya.vrundavansolutions;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,12 +17,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class adminActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
+    private OuterAdapter outerAdapter;
+    private boolean showCompletedButton = true; // Initially, show the Completed button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,71 +32,73 @@ public class adminActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Initialize Firebase Database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference currentOrderRef = database.getReference("Current Order");
+        outerAdapter = new OuterAdapter(new ArrayList<>(), FirebaseDatabase.getInstance().getReference("Products"));
+        recyclerView.setAdapter(outerAdapter);
 
-        // Retrieve data from "Current Order" node
+        Switch switch1 = findViewById(R.id.switch1);
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // Toggle the showCompletedButton based on the Switch state
+                showCompletedButton = !isChecked;
+
+                // Fetch and display orders based on the Switch state
+                if (isChecked) {
+                    fetchAndDisplayPastOrders();
+                }
+                else {
+                    fetchAndDisplayPendingOrders();
+                }
+            }
+        });
+
+        // Initially, display "Pending Orders"
+        fetchAndDisplayPendingOrders();
+    }
+
+    private void fetchAndDisplayPendingOrders() {
+        DatabaseReference currentOrderRef = FirebaseDatabase.getInstance().getReference("Current Order");
         currentOrderRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // Use a HashMap to group ordered items by phone number
-                HashMap<String, List<InnerAdapter.OrderedItem>> orderMap = new HashMap<>();
-
-                // Loop through all phone numbers (key)
+                List<Order> orderList = new ArrayList<>();
                 for (DataSnapshot phoneNumberSnapshot : dataSnapshot.getChildren()) {
                     String phoneNumber = phoneNumberSnapshot.getKey();
                     List<InnerAdapter.OrderedItem> orderedItems = new ArrayList<>();
-
-                    // Loop through all items (child nodes) under the phone number
                     for (DataSnapshot itemSnapshot : phoneNumberSnapshot.getChildren()) {
                         String itemName = itemSnapshot.getKey();
-                        String quantityString = itemSnapshot.getValue(String.class); // Get quantity as a String
+                        String quantityString = itemSnapshot.getValue(String.class);
 
-                        // Convert the quantityString to an integer
-                        int quantity = Integer.parseInt(quantityString);
-
-                        // Create OrderedItem and add it to the orderedItems list
-                        InnerAdapter.OrderedItem orderedItem = new InnerAdapter.OrderedItem(itemName, quantity);
-                        orderedItems.add(orderedItem);
+                        // Handle parsing the quantity as a String
+                        try {
+                            int quantity = Integer.parseInt(quantityString);
+                            InnerAdapter.OrderedItem orderedItem = new InnerAdapter.OrderedItem(itemName, quantity);
+                            orderedItems.add(orderedItem);
+                        }
+                        catch (NumberFormatException e) {
+                            // Skip the item with invalid quantity value
+                            Log.w("adminActivity", "Invalid quantity value for item: " + itemName);
+                        }
                     }
 
-                    // Add the orderedItems list to the orderMap
-                    orderMap.put(phoneNumber, orderedItems);
-                }
-
-                // Create a list of orders based on the orderMap
-                List<Order> orderList = new ArrayList<>();
-                for (Map.Entry<String, List<InnerAdapter.OrderedItem>> entry : orderMap.entrySet()) {
-                    String phoneNumber = entry.getKey();
-                    List<InnerAdapter.OrderedItem> orderedItems = entry.getValue();
-
-                    // Retrieve additional data from the "Users" node based on the phone number
                     DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Users");
                     usersRef.child(phoneNumber).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot userSnapshot) {
                             if (userSnapshot.exists()) {
-                                // Retrieve user details from the snapshot
                                 String name = userSnapshot.child("Name").getValue(String.class);
                                 String shopName = userSnapshot.child("Shop_Name").getValue(String.class);
                                 String address = userSnapshot.child("Shop_Address").getValue(String.class);
-
-                                // Create the Order object with retrieved data and add it to the list
                                 Order order = new Order(name, phoneNumber, shopName, address, orderedItems);
                                 orderList.add(order);
-
-                                // Notify the adapter about the data change
-                                OuterAdapter orderAdapter = new OuterAdapter(orderList);
-                                recyclerView.setAdapter(orderAdapter);
-                                orderAdapter.notifyDataSetChanged(); // Add this line to notify data changes
-
+                                outerAdapter.setOrderList(orderList);
+                                outerAdapter.setShowCompletedButton(showCompletedButton);
+                                outerAdapter.notifyDataSetChanged();
                             }
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
-                            // Handle any errors
                             Log.e("adminActivity", "DatabaseError: " + databaseError.getMessage());
                         }
                     });
@@ -103,9 +107,68 @@ public class adminActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle any errors
                 Log.e("adminActivity", "DatabaseError: " + databaseError.getMessage());
             }
         });
+        outerAdapter.setShowCompletedButton(true);
+        outerAdapter.notifyDataSetChanged();
+    }
+
+    private void fetchAndDisplayPastOrders() {
+        DatabaseReference pastOrdersRef = FirebaseDatabase.getInstance().getReference("Past Orders");
+        pastOrdersRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                List<Order> orderList = new ArrayList<>();
+                for (DataSnapshot phoneNumberSnapshot : dataSnapshot.getChildren()) {
+                    String phoneNumber = phoneNumberSnapshot.getKey();
+                    List<InnerAdapter.OrderedItem> orderedItems = new ArrayList<>();
+                    for (DataSnapshot itemSnapshot : phoneNumberSnapshot.getChildren()) {
+                        String itemName = itemSnapshot.getKey();
+                        String quantityString = itemSnapshot.getValue(String.class);
+
+                        // Handle parsing the quantity as a String
+                        try {
+                            int quantity = Integer.parseInt(quantityString);
+                            InnerAdapter.OrderedItem orderedItem = new InnerAdapter.OrderedItem(itemName, quantity);
+                            orderedItems.add(orderedItem);
+                        }
+                        catch (NumberFormatException e) {
+                            // Skip the item with invalid quantity value
+                            Log.w("adminActivity", "Invalid quantity value for item: " + itemName);
+                        }
+                    }
+
+                    DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Users");
+                    usersRef.child(phoneNumber).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot userSnapshot) {
+                            if (userSnapshot.exists()) {
+                                String name = userSnapshot.child("Name").getValue(String.class);
+                                String shopName = userSnapshot.child("Shop_Name").getValue(String.class);
+                                String address = userSnapshot.child("Shop_Address").getValue(String.class);
+                                Order order = new Order(name, phoneNumber, shopName, address, orderedItems);
+                                orderList.add(order);
+                                outerAdapter.setOrderList(orderList);
+                                outerAdapter.setShowCompletedButton(showCompletedButton);
+                                outerAdapter.notifyDataSetChanged();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Log.e("adminActivity", "DatabaseError: " + databaseError.getMessage());
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e("adminActivity", "DatabaseError: " + databaseError.getMessage());
+            }
+        });
+        outerAdapter.setShowCompletedButton(false);
+        outerAdapter.notifyDataSetChanged();
     }
 }

@@ -19,6 +19,7 @@ public class profile extends AppCompatActivity {
     private EditText editName, editPassword, editShopName, editShopAddress, editPhone;
     private DatabaseReference reference;
     private String phoneNumber;
+    private Button cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +37,30 @@ public class profile extends AppCompatActivity {
         Button saveButton = findViewById(R.id.update_button);
 
 
-        //profile
+        //home
         Button home_button = findViewById(R.id.home_button);
         home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent profile_intent = new Intent(profile.this, home.class);
+                if(phoneNumber!=null){
+                    profile_intent.putExtra("phone",phoneNumber);
+                }
                 startActivity(profile_intent);
+            }
+        });
+
+
+        //cart
+        cart = findViewById(R.id.cart_button);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cart_intent = new Intent(profile.this, cart.class);
+                if(phoneNumber!=null) {
+                    cart_intent.putExtra("phone", phoneNumber);
+                }
+                startActivity(cart_intent);
             }
         });
 

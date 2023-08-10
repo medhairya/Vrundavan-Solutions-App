@@ -29,7 +29,9 @@ public class home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent bagira_intent = new Intent(home.this, bagira.class);
-                bagira_intent.putExtra("phone",phone);
+                if(phone!=null) {
+                    bagira_intent.putExtra("phone", phone);
+                }
                 startActivity(bagira_intent);
             }
         });
@@ -45,7 +47,9 @@ public class home extends AppCompatActivity {
             public void onClick(View v) {
                 Intent profile_intent = new Intent(home.this, profile.class);
                 String sharePhone = getIntent().getStringExtra("Phone");
-                profile_intent.putExtra("Phone", sharePhone); // Pass the phoneUser value
+                if(phone!=null) {
+                    profile_intent.putExtra("Phone", phone);
+                }// Pass the phoneUser value
                 startActivity(profile_intent);
             }
         });
@@ -56,7 +60,9 @@ public class home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent cart_intent = new Intent(home.this, cart.class);
-                cart_intent.putExtra("phone",phone);
+                if(phone!=null) {
+                    cart_intent.putExtra("phone", phone);
+                }
                 startActivity(cart_intent);
             }
         });

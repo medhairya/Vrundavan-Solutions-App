@@ -20,8 +20,9 @@ public class bagira extends AppCompatActivity {
     private static final String TAG = "bagiraActivity";
 
 
-    private DatabaseReference orderRef, currentOrderRef;
-    private String phone;
+    private DatabaseReference orderRef, currentOrderRef,newOrderRef;
+    private String phone,phoneNumber;
+    private Button cart;
     private TextView showCanRed, showBottle, showWater200, showWater500, showWater1000;
     private int canRedQuantity = 0, bottleQuantity = 0, water200Quantity = 0, water500Quantity = 0, water1000Quantity = 0;
 
@@ -32,7 +33,9 @@ public class bagira extends AppCompatActivity {
 
         phone = getIntent().getStringExtra("phone");
         orderRef = FirebaseDatabase.getInstance().getReference().child("Order");
-        currentOrderRef = orderRef.child(phone); // Retrieve the existing order for the user
+        if(phone!=null) {
+            currentOrderRef = orderRef.child(phone); // Retrieve the existing order for the user
+        }
 
         showCanRed=findViewById(R.id.show_bagira_can_red);
         showBottle = findViewById(R.id.show_bagira_bottle);
@@ -81,7 +84,23 @@ public class bagira extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent profile_intent = new Intent(bagira.this, profile.class);
+                if(phone!=null) {
+                    profile_intent.putExtra("Phone", phone);
+                }
                 startActivity(profile_intent);
+            }
+        });
+
+        //cart
+        cart = findViewById(R.id.cart);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cart_intent = new Intent(bagira.this, cart.class);
+                if(phone!=null) {
+                    cart_intent.putExtra("phone", phone);
+                }
+                startActivity(cart_intent);
             }
         });
 
@@ -241,9 +260,14 @@ public class bagira extends AppCompatActivity {
         // Add the order to the Order database
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
 
         // Create a child node for this order using the phone number and set its values
+        if(phoneNumber!=null) {
+            DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        }
         DatabaseReference newOrderRef = orderRef.child(phoneNumber);
 
         // Create a child node for this order and set its values
@@ -283,9 +307,13 @@ public class bagira extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
 
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        if(phoneNumber!=null) {
+            DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        }
 
         newOrderRef.child("Black Bagira Water 500ml").setValue(order.getQuantity());
 
@@ -321,9 +349,16 @@ public class bagira extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            String phoneNumber = phone;
+        }
 
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        if(phoneNumber!=null) {
+            DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        }
+        if(phoneNumber!=null) {
+            DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        }
 
         newOrderRef.child("Black Bagira Water 200ml").setValue(order.getQuantity());
 
@@ -359,9 +394,14 @@ public class bagira extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
 
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        if(phoneNumber!=null) {
+            newOrderRef = orderRef.child(phoneNumber);
+        }
+
 
         newOrderRef.child("Black Bagira Bottle").setValue(order.getQuantity());
 
@@ -398,9 +438,14 @@ public class bagira extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            String phoneNumber = phone;
+        }
 
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+
+        if(phoneNumber!=null) {
+            DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        }
 
         newOrderRef.child("Black Bagira Can").setValue(order.getQuantity());
 

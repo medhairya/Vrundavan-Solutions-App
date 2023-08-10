@@ -20,9 +20,11 @@ public class haywards extends AppCompatActivity {
     private static final String TAG = "haywardsActivity";
     private DatabaseReference orderRef,currentOrderRef;
 
-    private String phone;
+    private String phone,phoneNumber;
+    private DatabaseReference newOrderRef;
     private TextView showbottle1 , showbottle2;
     private int haywards_300_quantity = 0 , haywards_750_quantity = 0;
+    private Button cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +34,24 @@ public class haywards extends AppCompatActivity {
 
         phone = getIntent().getStringExtra("phone");
         orderRef = FirebaseDatabase.getInstance().getReference().child("Order");
-        currentOrderRef = orderRef.child(phone);// Initialize with null
-
+        if(phone!=null) {
+            currentOrderRef = orderRef.child(phone);// Initialize with null
+        }
         showbottle2 = findViewById(R.id.show_bottle2);
         showbottle1 = findViewById(R.id.show_bottle1);
+
+        //cart
+        cart = findViewById(R.id.button5);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cart_intent = new Intent(haywards.this, cart.class);
+                if(phone!=null) {
+                    cart_intent.putExtra("phone", phone);
+                }
+                startActivity(cart_intent);
+            }
+        });
 
         if(currentOrderRef!=null){
             currentOrderRef.addValueEventListener(new ValueEventListener() {
@@ -65,6 +81,9 @@ public class haywards extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent profile_intent = new Intent(haywards.this, profile.class);
+                if(phone!=null){
+                    profile_intent.putExtra("Phone",phone);
+                }
                 startActivity(profile_intent);
             }
         });
@@ -158,10 +177,15 @@ public class haywards extends AppCompatActivity {
 
         // Add the order to the Order database
         DatabaseReference orderNodeRef = orderRef.push();
-            String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        String orderId = orderNodeRef.getKey();
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
 
         // Create a child node for this order using the phone number and set its values
+        if(phoneNumber!=null) {
+            DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        }
         DatabaseReference newOrderRef = orderRef.child(phoneNumber);
 
         // Create a child node for this order and set its values
@@ -203,10 +227,15 @@ public class haywards extends AppCompatActivity {
         // Add the order to the Order database
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
 
         // Create a child node for this order using the phone number and set its values
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+
+        if(phoneNumber!=null) {
+            newOrderRef = orderRef.child(phoneNumber);
+        }
 
         // Create a child node for this order and set its values
         newOrderRef.child("Haywards 300ml").setValue(order.getQuantity());

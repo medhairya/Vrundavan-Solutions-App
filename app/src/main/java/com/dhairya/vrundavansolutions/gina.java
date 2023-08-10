@@ -19,8 +19,9 @@ public class gina extends AppCompatActivity {
 
     int jeera_quantity = 0, orrange_quantity= 0 , t2_quantity= 0 , limca_quantity= 0 , c10_quantity= 0 , red_apple_quantity = 0 , green_apple_quantity=0;
 
-    private String phone;
-    private DatabaseReference orderRef,currentOrderRef;
+    private String phone,phoneNumber;
+    private DatabaseReference orderRef,currentOrderRef,newOrderRef;
+    private Button cart;
 
     private TextView showjeera,showorrange,showt2,showlimca,showc10,showredapple,showgreenapple;
 
@@ -31,7 +32,11 @@ public class gina extends AppCompatActivity {
 
         phone = getIntent().getStringExtra("phone");
         orderRef = FirebaseDatabase.getInstance().getReference().child("Order");
-        currentOrderRef = orderRef.child(phone); // Initialize with null
+        if(phone!=null) {
+            currentOrderRef = orderRef.child(phone);// Initialize with null
+            phoneNumber=phone;
+        }
+
 
         showgreenapple = findViewById(R.id.show_bottle14);
         showredapple = findViewById(R.id.show_bottle13);
@@ -86,7 +91,24 @@ public class gina extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent profile_intent = new Intent(gina.this, profile.class);
+                if(phone!=null){
+                    profile_intent.putExtra("Phone",phone);
+                }
                 startActivity(profile_intent);
+            }
+        });
+
+
+        //cart
+        cart = findViewById(R.id.cart_gina);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cart_intent = new Intent(gina.this, cart.class);
+                if(phone!=null) {
+                    cart_intent.putExtra("phone", phone);
+                }
+                startActivity(cart_intent);
             }
         });
 
@@ -481,9 +503,14 @@ public class gina extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
 
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
+
+        if(phoneNumber!=null) {
+            newOrderRef = orderRef.child(phoneNumber);
+        }
 
         newOrderRef.child("Gina Orange").setValue(order.getQuantity());
 
@@ -535,14 +562,17 @@ public class gina extends AppCompatActivity {
         String orderId = orderNodeRef.getKey();
         String phoneNumber = phone;
 
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        if(phoneNumber!=null) {
+            DatabaseReference newOrderRef = orderRef.child(phoneNumber);
 
-        newOrderRef.child("Gina Jeera").setValue(order.getQuantity());
 
-        currentOrderRef = newOrderRef;
+            newOrderRef.child("Gina Jeera").setValue(order.getQuantity());
 
-        jeera_quantity = order.getQuantity();
-        showjeera.setText(String.valueOf(jeera_quantity));
+            currentOrderRef = newOrderRef;
+
+            jeera_quantity = order.getQuantity();
+            showjeera.setText(String.valueOf(jeera_quantity));
+        }
     }
 
     private static class Order {

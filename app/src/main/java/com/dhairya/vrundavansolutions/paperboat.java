@@ -24,9 +24,11 @@ public class paperboat extends AppCompatActivity {
 
     public ViewFlipper flipper = null;
     int mango_quantity = 0 , guava_quantity = 0 , lychee_quantity = 0 , mixfruit_quantity = 0 , apple_quantity = 0 , orange_quantity = 0;
-    private String phone;
+    private String phone,phoneNumber;
+    private Button cart;
     private DatabaseReference orderRef,currentOrderRef;
     private TextView showmango,showguava,showlychee,showmixfruit,showapple,showorange;
+    private DatabaseReference newOrderRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,9 @@ public class paperboat extends AppCompatActivity {
 
         phone = getIntent().getStringExtra("phone");
         orderRef = FirebaseDatabase.getInstance().getReference().child("Order");
-        currentOrderRef = orderRef.child(phone); // Retrieve the existing order for the user
+        if(phone!=null) {
+            currentOrderRef = orderRef.child(phone); // Retrieve the existing order for the user
+        }
 
         showorange = findViewById(R.id.show_bottle7);
         showapple = findViewById(R.id.show_bottle6);
@@ -82,14 +86,30 @@ public class paperboat extends AppCompatActivity {
             });
         }
 
+        //cart
+        cart = findViewById(R.id.button6);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cart_intent = new Intent(paperboat.this, cart.class);
+                if(phone!=null) {
+                    cart_intent.putExtra("phone", phone);
+                }
+                startActivity(cart_intent);
+            }
+        });
 
 
-            //profile//
+
+        //profile//
         Button profilebtn = findViewById(R.id.profile_paperboat);
         profilebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent profile_intent = new Intent(paperboat.this, profile.class);
+                if(phone!=null){
+                    profile_intent.putExtra("Phone",phone);
+                }
                 startActivity(profile_intent);
             }
         });
@@ -280,7 +300,9 @@ public class paperboat extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
 
         DatabaseReference newOrderRef = orderRef.child(phoneNumber);
 
@@ -339,7 +361,10 @@ public class paperboat extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
+
 
         DatabaseReference newOrderRef = orderRef.child(phoneNumber);
 
@@ -356,7 +381,9 @@ public class paperboat extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
 
         DatabaseReference newOrderRef = orderRef.child(phoneNumber);
 
@@ -415,8 +442,12 @@ public class paperboat extends AppCompatActivity {
         paperboat.Order order = new paperboat.Order("Paper Boat Lychee", 1);
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
+        if(phoneNumber!=null) {
+            newOrderRef = orderRef.child(phoneNumber);
+        }
         newOrderRef.child("Paper Boat Lychee").setValue(order.getQuantity());
         currentOrderRef = newOrderRef;
         lychee_quantity = order.getQuantity();
@@ -428,9 +459,13 @@ public class paperboat extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
 
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        if(phoneNumber!=null) {
+            newOrderRef = orderRef.child(phoneNumber);
+        }
 
         newOrderRef.child("Paper Boat Guava").setValue(order.getQuantity());
 
@@ -488,9 +523,12 @@ public class paperboat extends AppCompatActivity {
 
         DatabaseReference orderNodeRef = orderRef.push();
         String orderId = orderNodeRef.getKey();
-        String phoneNumber = phone;
-
-        DatabaseReference newOrderRef = orderRef.child(phoneNumber);
+        if(phone!=null) {
+            phoneNumber = phone;
+        }
+        if(phoneNumber!=null) {
+            newOrderRef = orderRef.child(phoneNumber);
+        }
 
         newOrderRef.child("Paper Boat Mango").setValue(order.getQuantity());
 
